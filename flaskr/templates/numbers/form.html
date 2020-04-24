@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Numeros{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="number_string">numeros separados por ;</label>
+    <input type="text" name="number_string" id="number_string">
+    <input type="submit" value="Register">
+  </form>
+    <span>Asc: {{ asc_numbers }}</span>
+    <span>Desc: {{ desc_numbers }}</span>
+    <span>Even: {{ even_numbers }}</span>
+{% endblock %}

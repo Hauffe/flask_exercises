@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Mimificador{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="phrase">Frase:</label>
+    <input type="text" name="phrase" id="phrase">
+    <input type="submit" value="Register">
+  </form>
+    <div class="mimimi">
+        <span>{{ phrase }}</span>
+    </div>
+{% endblock %}

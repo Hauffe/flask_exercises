@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Datas{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="first_date">Primeira Data</label>
+    <input type="date" name="first_date" id="first_date">
+    <label for="second_date">Segunda Data</label>
+    <input type="date" name="second_date" id="second_date">
+    <input type="submit" value="Register">
+  </form>
+    <span>Dias: {{ days }}</span>
+    <span>Semanas: {{ weekday }}</span>
+    <span>Meses: {{ month }}</span>
+{% endblock %}
