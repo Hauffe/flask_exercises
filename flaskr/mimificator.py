@@ -9,6 +9,7 @@ bp = Blueprint('mimificator', __name__)
 
 @bp.route('/mimificator', methods=('GET', 'POST'))
 def mimificator():
+    vowels = "aAÁeéÉoOÓ"
     if request.method == 'POST':
         phrase = request.form['phrase']
 
@@ -21,7 +22,7 @@ def mimificator():
             flash(error)
         else:
             mimi_phrase = phrase
-            for vowel in "aeo":
+            for vowel in vowels:
                 mimi_phrase = mimi_phrase.replace(vowel, "i")
 
             return render_template('mimificator/form.html', phrase=mimi_phrase)
