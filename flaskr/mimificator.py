@@ -16,7 +16,7 @@ def mimificator():
         error = None
 
         if not phrase:
-            error = 'Title is required.'
+            error = 'Text is required.'
 
         if error is not None:
             flash(error)

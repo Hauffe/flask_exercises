@@ -11,13 +11,16 @@ bp = Blueprint('dates', __name__)
 def dates():
     format = "%Y-%m-%d"
     if request.method == 'POST':
-        first_date = datetime.strptime(request.form['first_date'], format)
-        second_date = datetime.strptime(request.form['second_date'], format)
+        first_date = request.form['first_date']
+        second_date = request.form['second_date']
 
         error = None
 
         if not first_date or not second_date:
-            error = 'Title is required.'
+            error = 'Text is required.'
+        else:
+            first_date = datetime.strptime(first_date, format)
+            second_date = datetime.strptime(second_date, format)
 
         if error is not None:
             flash(error)
